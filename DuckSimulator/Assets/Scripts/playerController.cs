@@ -17,16 +17,18 @@ public class playerController : MonoBehaviour {
 
 		Vector3 pos = gameObject.transform.position;
 
-		if (Input.GetKeyDown(KeyCode.Space) && pos.y == 0.5) {
+		if (Input.GetKeyDown(KeyCode.Space) && pos.y < 6.5) {
 			Jump();
 		}
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
-		rb.AddForce (movement * speed);
+		if(rb)
+			rb.AddForce (movement * speed);
 	}
 
 	void Jump() {
-		GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+		if(rb)
+			rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 	}
 }
