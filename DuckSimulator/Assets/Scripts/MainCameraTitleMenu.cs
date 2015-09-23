@@ -13,12 +13,12 @@ public class MainCameraTitleMenu : MonoBehaviour {
     // Use this for initialization
     void Start () {
         duckPos = Duck.position;
+		StartCoroutine(MoveCamera());
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        StartCoroutine(MoveCamera());
 	}
 
     IEnumerator MoveCamera()
