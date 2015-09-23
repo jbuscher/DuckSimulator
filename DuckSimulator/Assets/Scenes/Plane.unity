@@ -127,6 +127,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b590c6738d90f3b4baa09b2f3d40cd12, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &145092659 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 483756, guid: 5641a436263965940982d097e5fddc5b, type: 2}
+  m_PrefabInternal: {fileID: 1456631036}
 --- !u!1 &238610433
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,12 +211,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 238610433}
-  m_LocalRotation: {x: .217138663, y: 0, z: 0, w: .976140797}
-  m_LocalPosition: {x: 0, y: 8, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -2.80108079e-08, y: .985109329, z: -.171929106, w: -1.60494693e-07}
+  m_LocalPosition: {x: 0, y: .100000001, z: .239999995}
+  m_LocalScale: {x: .0500000007, y: .0500000007, z: .0500000045}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 145092659}
+  m_RootOrder: 22
 --- !u!1 &429568400
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +289,7 @@ Transform:
   m_LocalScale: {x: 2, y: 10, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &546394694
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +435,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &948912014
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +508,7 @@ Transform:
   m_LocalScale: {x: 2, y: 10, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &1282947536
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +568,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1001 &1456631036
 Prefab:
   m_ObjectHideFlags: 0
@@ -602,7 +606,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 483756, guid: 5641a436263965940982d097e5fddc5b, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11447890, guid: 5641a436263965940982d097e5fddc5b, type: 2}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448100, guid: 5641a436263965940982d097e5fddc5b, type: 2}
+      propertyPath: m_Drag
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5641a436263965940982d097e5fddc5b, type: 2}
