@@ -11,11 +11,17 @@ public class playerController : MonoBehaviour {
 	private int jumpCount;
 	private bool onWater;
 	private float waterHeight;
+	private float[] tubWallLocations = new float[4]; 
 
 	void Start(){
 		rb = GetComponent<Rigidbody>();
 		jumpCount = 1;
 		waterHeight = GameObject.Find ("WaterProDaytime").transform.position.y;
+
+		tubWallLocations[0] = GameObject.Find ("LongWall").transform.position.x;
+		tubWallLocations[1] = GameObject.Find ("LongWall (1)").transform.position.x;
+		tubWallLocations[2] = GameObject.Find ("ShortWall").transform.position.z;
+		tubWallLocations[3] = GameObject.Find ("ShortWall (1)").transform.position.z;
 	}
 
 	void FixedUpdate(){
@@ -44,8 +50,11 @@ public class playerController : MonoBehaviour {
 				rb.transform.Rotate(moveRotate * Vector3.up * rotateSpeed * Time.deltaTime);
 			}
 
-			if(onWater)
+			if (onWater)
 				CorrectOrientation();
+
+			if (!InTheTub(gameObject.transform.position) && gameObject.transform.position.y < 8)
+				BlowUp();
 		}
 	}
 
@@ -70,4 +79,26 @@ public class playerController : MonoBehaviour {
 		else if (rotateZ < 0 && shouldRotateZ)
 			rb.transform.Rotate (Vector3.forward * Mathf.Abs(rotateZ) * correctionSpeed);
 	}
+
+	/*
+	 * You can find me in da tub
+		with my mister Bob
+		listen to this pretty sound
+		it comes from my rubber duck 
+		I'm in to sitting down
+		I ain't used to standing up
+		so come, give me a hug
+		if you're in to getting scrubbed
+	*/
+	bool InTheTub(Vector3 position) {
+		return position.x < tubWallLocations[0] && 
+				position.x > tubWallLocations[1] &&
+				position.z > tubWallLocations[2] &&
+				position.z < tubWallLocations[3];
+	}
+
+	void BlowUp() {
+		print ("BOOM");
+	}
+
 }
