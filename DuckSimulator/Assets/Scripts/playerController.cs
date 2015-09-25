@@ -98,7 +98,8 @@ public class playerController : MonoBehaviour {
 	}
 
 	void BlowUp() {
-		print ("BOOM");
+		transform.localScale = Vector3.zero;
+		rb.velocity = Vector3.zero;
 	}
 
 }
