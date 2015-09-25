@@ -11,7 +11,8 @@ public class playerController : MonoBehaviour {
 	private int jumpCount;
 	private bool onWater;
 	private float waterHeight;
-	private float[] tubWallLocations = new float[4]; 
+	private float[] tubWallLocations = new float[4];
+	public GameObject explosion;
 
 	void Start(){
 		rb = GetComponent<Rigidbody>();
@@ -53,8 +54,9 @@ public class playerController : MonoBehaviour {
 			if (onWater)
 				CorrectOrientation();
 
-			if (!InTheTub(gameObject.transform.position) && gameObject.transform.position.y < 8)
-				BlowUp();
+			if (!InTheTub(gameObject.transform.position) && gameObject.transform.position.y < 8) {
+				StartCoroutine(BlowUp());
+			}
 		}
 	}
 
@@ -97,9 +99,12 @@ public class playerController : MonoBehaviour {
 				position.z < tubWallLocations[3];
 	}
 
-	void BlowUp() {
+	IEnumerator BlowUp() {
+		Instantiate(explosion, transform.position, transform.rotation);
 		transform.localScale = Vector3.zero;
 		rb.velocity = Vector3.zero;
+		yield return new WaitForSeconds(2.0f);
+		Application.LoadLevel ("Plane");
 	}
 
 }
